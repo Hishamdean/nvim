@@ -41,6 +41,7 @@ return {
         "prismals",
         "pyright",
         "templ",
+        "gopls",
       },
       handlers = {
         function(server_name)
@@ -82,6 +83,7 @@ return {
         "stylua",   -- lua formatter
         "pylint",
         -- "eslint_d",
+        "goimports",
       },
     })
   end,

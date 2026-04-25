@@ -25,6 +25,14 @@ return {
           pager = [[delta --width=$COLUMNS --hunk-header-style="omit" --file-style="omit"]],
         },
       },
+      keymap = {
+        fzf = {
+          ["tab"] = "down",     -- Tab moves down
+          ["shift-tab"] = "up", -- Shift-Tab moves up
+          ["ctrl-n"] = "down",  -- Alternative: Ctrl-n moves down
+          ["ctrl-p"] = "up",    -- Alternative: Ctrl-p moves up
+        },
+      },
       files = {
         lsp = {
           code_actions = {

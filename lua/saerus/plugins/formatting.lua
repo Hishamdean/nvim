@@ -3,13 +3,12 @@ return {
   event = { "BufReadPre", "BufNewFile" },
   config = function()
     local conform = require("conform")
-
     conform.setup({
       formatters_by_ft = {
-        javascript = { "prettier" },
-        typescript = { "prettier" },
-        javascriptreact = { "prettier" },
-        typescriptreact = { "prettier" },
+        javascript = { "biome", "biome-organize-imports" },
+        javascriptreact = { "biome", "biome-organize-imports" },
+        typescript = { "biome", "biome-organize-imports" },
+        typescriptreact = { "biome", "biome-organize-imports" },
         svelte = { "prettier" },
         css = { "prettier" },
         html = { "prettier" },
@@ -17,18 +16,18 @@ return {
         yaml = { "prettier" },
         markdown = { "prettier" },
         graphql = { "prettier" },
-        -- liquid = { "prettier" },
         lua = { "stylua" },
-        -- python = { "isort", "black" },
+        go = { "goimports", "gofmt" },
+        rust = { "rustfmt" },
       },
+      -- Remove the formatters section with prepend_args
       format_on_save = {
         lsp_fallback = true,
         async = false,
         timeout_ms = 1000,
       },
     })
-
-    vim.keymap.set({ "n", "v" }, "<leader>mp", function()
+    vim.keymap.set({ "n", "v" }, "<leader>bf", function()
       conform.format({
         lsp_fallback = true,
         async = false,

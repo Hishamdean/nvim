@@ -3,8 +3,9 @@ return {
   event = "VeryLazy",
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
-    { "antosha417/nvim-lsp-file-operations", config = true },
-    { "folke/neodev.nvim",                   opts = {} },
+    event = "VeryLazy",
+    { "antosha417/nvim-lsp-file-operations", event = "VeryLazy",  config = true },
+    { "folke/neodev.nvim",                   event = "VeryLazy",  opts = {} },
   },
   config = function()
     local keymap = vim.keymap -- for conciseness

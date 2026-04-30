@@ -19,6 +19,8 @@ return {
         lua = { "stylua" },
         go = { "goimports", "gofmt" },
         rust = { "rustfmt" },
+        c = { "clang_format" },
+        cpp = { "clang_format" },
       },
       -- Remove the formatters section with prepend_args
       format_on_save = {

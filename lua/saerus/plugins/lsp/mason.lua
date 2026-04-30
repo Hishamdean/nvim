@@ -41,6 +41,7 @@ return {
         "prismals",
         "pyright",
         "templ",
+        "clangd",
         "gopls",
       },
       handlers = {
@@ -73,15 +74,17 @@ return {
             },
           })
         end,
-      }
+      },
     })
 
     mason_tool_installer.setup({
-      automatic_enable = true,
       ensure_installed = {
-        "prettier", -- prettier formatter
-        "stylua",   -- lua formatter
+        "prettier",
+        "stylua",
         "pylint",
+        "oxlint",
+        "biome",
+        "clang-format",
         -- "eslint_d",
         "goimports",
       },

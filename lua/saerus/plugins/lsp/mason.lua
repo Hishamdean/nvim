@@ -42,6 +42,7 @@ return {
         "pyright",
         "templ",
         "clangd",
+        "gopls",
       },
       handlers = {
         function(server_name)
@@ -84,6 +85,8 @@ return {
         "oxlint",
         "biome",
         "clang-format",
+        -- "eslint_d",
+        "goimports",
       },
     })
   end,

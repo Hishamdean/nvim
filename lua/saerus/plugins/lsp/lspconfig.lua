@@ -1,10 +1,10 @@
 return {
   "neovim/nvim-lspconfig",
-  event = "VeryLazy",
+  -- event = "VeryLazy",
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
     { "antosha417/nvim-lsp-file-operations", config = true },
-    { "folke/neodev.nvim",                   opts = {} },
+    { "folke/neodev.nvim", opts = {} },
   },
   config = function()
     local keymap = vim.keymap -- for conciseness
@@ -52,9 +52,6 @@ return {
 
         opts.desc = "Show documentation for what is under cursor"
         keymap.set("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
-
-        opts.desc = "Restart LSP"
-        keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
       end,
     })
 
@@ -67,5 +64,7 @@ return {
       local hl = "DiagnosticSign" .. type
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
+
+    vim.lsp.enable("oxlint")
   end,
 }

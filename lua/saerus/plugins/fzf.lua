@@ -1,6 +1,5 @@
 return {
   "ibhagwan/fzf-lua",
-  event = "VeryLazy",
   -- optional for icon support
   dependencies = { "nvim-tree/nvim-web-devicons" },
   keys = {
@@ -23,6 +22,14 @@ return {
           -- to disable, can also be set under 'lsp.code_actions.preview_pager'
           -- recommended styling for delta
           pager = [[delta --width=$COLUMNS --hunk-header-style="omit" --file-style="omit"]],
+        },
+      },
+      keymap = {
+        fzf = {
+          ["tab"] = "down",     -- Tab moves down
+          ["shift-tab"] = "up", -- Shift-Tab moves up
+          ["ctrl-n"] = "down",  -- Alternative: Ctrl-n moves down
+          ["ctrl-p"] = "up",    -- Alternative: Ctrl-p moves up
         },
       },
       files = {
